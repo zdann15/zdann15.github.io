@@ -27,7 +27,7 @@ export default function Home() {
     return (
       <div className={styles1.container}>
         <div className={styles1.projectlist}>
-          <Header> My Projects </Header>
+          <p className={styles1.myprojects}> My Projects </p>
           <div className={styles1.projects} onMouseLeave={handleMouseLeave}>
           <Link className={styles1.projectname} onMouseOver={handleMouseOver1}  href="">Personal Website</Link>
           <hr className={styles1.divider}/>

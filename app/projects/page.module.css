@@ -5,12 +5,19 @@
 
 .container{
     width:100vw;
-    padding:100px;
+    padding:300px;
     transition: all 1s ease;
+}
+.myprojects {
+  font-family: Inter;
+  font-size: 4vw;
+  color:white;
 }
 .projectlist{
     position:absolute;
-    width:40%;
+    top:20%;
+    left:5%;
+    width:30%;
 }
 .projects{
     margin-top:50px;
@@ -18,12 +25,12 @@
 .divider{
     border-width:1px;
     border-color:white;
-    width:60%
+    width:80%
 }
 .projectname{
     padding:15px;
     font-family: Inter;
-  font-size: 30px;
+  font-size: 2.5vw;
   color:white;
   display:block;
   transition: transform 0.5s ease-in-out;
@@ -72,13 +79,13 @@
               transform: scale(1);
     }
   }
-  
+@media only screen and (min-width:800px){
 .image{
     position:absolute;
-    top:20%;
+    top:calc(max(20%, 200px));
     right:5%;
-    width:60%;
-    height:60%;
+    width:55%;
+    height:calc(max(60%, 300px));
     background:rgba(255,255,255,1);
     border-radius:15px;
     -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -106,6 +113,7 @@
     font-family: Inter;
     font-weight:bold;
     letter-spacing:0.1em;
+    padding:20px;
     display:block;
     text-align:center;
   font-size: 40px;
@@ -144,4 +152,12 @@
   .fadeOut {
     opacity: 0;
   }
-  
+}
+@media only screen and (max-width: 800px){
+  .image{
+    display:none;
+  }
+  .imagebox{
+    display:none;
+  }
+}
