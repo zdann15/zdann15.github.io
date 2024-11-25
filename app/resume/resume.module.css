@@ -1,0 +1,63 @@
+@font-face{
+    font-family: Inter;
+    src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+  }
+
+.page {
+    height:auto;
+    width:60vw;
+    padding:80px;
+    gap: 64px;
+    min-width:600px;
+    padding-bottom: 200px;
+  }
+.title{
+    margin-bottom:20px;
+  }
+.resume{
+    flex-grow:1;
+  }
+  .header1 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight:bold;
+    color:white;
+    margin-top:20px;
+    clear:both;
+  }
+  .header2 {
+    font-family: Inter;
+    font-size: 20px;
+    color:white;
+    float:left;
+    padding-bottom:5px;
+  }
+  .header3 {
+    font-family: Inter;
+    font-size: 16px;
+    color:white;
+    margin-top:3px;
+    font-style:italic;
+    clear:both;
+  }
+  .date {
+    float:right;
+    color:white;
+    font-size: 16px;
+    font-family:Inter;
+    font-style:italic;
+  }
+  .content{
+    color:white;
+    font-family:Inter;
+    margin-top:10px;
+    clear:both;
+    padding-bottom: 20px;
+  }
+  .line{
+    border: 1px solid white;
+    border-radius: 0.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
