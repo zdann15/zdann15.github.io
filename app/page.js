@@ -1,10 +1,18 @@
+"use client"
 import styles from "./page.module.css";
 import {Navbar, Navitem} from "./components/navbar.js"
 import {Header, Text} from "./components/header.js"
+import {useState, useEffect, useReducer} from "react";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setIsVisible(true);
+    }, 50);
+  }, []);
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${isVisible ? styles.slideinleft : styles.page}`}>
       <Header>
          Hey, it's Daniel!
       </Header>

@@ -44,10 +44,10 @@ export function Content({children}){
 export default function Home() {
     return (
       <div className={styles1.page}>
-        <div className={styles1.title}>
+        <div className={`${styles1.title} ${styles1.slideinleft}`}>
         <Header>Daniel Zhang </Header>
         </div>
-        <div className={styles1.resume}>
+        <div className={`${styles1.resume} ${styles1.slideinleft}`}>
         <Header1> Education</Header1>
         <hr className={styles1.line}/>
           <Header2>University of Waterloo</Header2>
