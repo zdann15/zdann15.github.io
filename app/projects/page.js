@@ -11,7 +11,7 @@ import React, {useState} from "react";
 
 
 export default function Home() {
-  const [curHover, setCurHover] = useState(0);
+  const [curHover, setCurHover] = useState(1);
   const handleMouseOver1 = () => {
     if(1!=curHover) setCurHover(1);
   };
@@ -22,9 +22,11 @@ export default function Home() {
     if(3!=curHover) setCurHover(3);
   };
   const handleMouseLeave = () => {
-    if(curHover!=0) setCurHover(0);
+    if(curHover!=0) setCurHover(curHover);
   };
     return (
+      <>
+      <title> Daniel Zhang | Projects </title>
       <div className={styles1.container}>
         <div className={`${styles1.projectlist} ${styles1.slideinleft}`}>
           <p className={styles1.myprojects}> My Projects </p>
@@ -78,5 +80,6 @@ export default function Home() {
       </div>
         
       </div>
+      </>
     );
   }

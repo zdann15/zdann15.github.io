@@ -43,6 +43,8 @@ export function Content({children}){
 }
 export default function Home() {
     return (
+      <>
+      <title>Daniel Zhang | Resume</title>
       <div className={styles1.page}>
         <div className={`${styles1.title} ${styles1.slideinleft}`}>
         <Header>Daniel Zhang </Header>
@@ -85,5 +87,6 @@ export default function Home() {
             C#, Python, Java, HTML, CSS, JavaScript, Next.js, React Native </p>
         </div>
       </div>
+      </>
     );
   }
