@@ -4,7 +4,7 @@ import styles1 from './page.module.css';
 import Image from 'next/image';
 import finlyze from '../images/finlyze.png';
 import starduo from '../images/starduo.png';
-import drchecker from '../images/drchecker.png';
+import capyspend from '../images/capyspend.png';
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(0);
@@ -15,21 +15,21 @@ export default function Projects() {
       name: "Finlyze",
       image: finlyze,
       description: "Finlyze is a financial app where users can track their income and expenses, as well as monitor their stock portfolio all in one place.",
-      technologies: ["React", "Node.js", "MongoDB", "Express"]
+      technologies: ["Angular", "Node.js", "MongoDB", "Express"]
     },
     {
       id: 2,
       name: "StarDuo",
       image: starduo,
       description: "An iOS app built using React Native, Expo and TypeScript to enable friends to better connect with each other.",
-      technologies: ["React Native", "Expo", "TypeScript", "Firebase"]
+      technologies: ["React Native", "Expo", "TypeScript", "PostgreSQL"]
     },
     {
       id: 3,
       name: "CapySpend",
-      image: drchecker,
-      description: "An app for graphical analysis of relay signals, built using WPF, XAML and C#.",
-      technologies: ["C#", "WPF", "XAML", ".NET"]
+      image: capyspend,
+      description: "An AI-powered chatbot that can build personalized budgets based on real financial data.",
+      technologies: ["React", "Node.js", "PostgreSQL", "OpenAI", "Plaid"]
     }
   ];
 
@@ -58,6 +58,13 @@ export default function Projects() {
                   style={{ objectFit: 'cover' }}
                   className={styles1.image}
                 />
+                
+                {/* Default title overlay - always visible */}
+                <div className={styles1.defaultTitleOverlay}>
+                  <h3 className={styles1.defaultProjectName}>{project.name}</h3>
+                </div>
+                
+                {/* Full description overlay - visible on hover */}
                 <div className={styles1.imageOverlay}>
                   <div className={styles1.overlayContent}>
                     <h3 className={styles1.projectName}>{project.name}</h3>

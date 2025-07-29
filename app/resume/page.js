@@ -16,6 +16,9 @@ export default function Home() {
             <Header2>University of Waterloo</Header2>
             <Date>Sept 2024 - Apr 2029</Date>
             <Header3>Bachelor of Computer Science (Honours Co-op)</Header3>
+            <Content>
+              - cGPA: 95.6, MAV: 97.0
+            </Content>
           </div>
           
           <div className={styles1.section}>

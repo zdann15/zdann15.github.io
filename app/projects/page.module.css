@@ -72,6 +72,37 @@
     transform: scale(1.1);
 }
 
+/* Default title overlay - always visible */
+.defaultTitleOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8) 0%,
+        rgba(0,0,0,0.6) 50%,
+        rgba(0,0,0,0) 100%
+    );
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    transition: opacity 0.4s ease;
+}
+
+.defaultProjectName {
+    font-family: Inter;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+/* Hide default title on hover */
+.projectCard:hover .defaultTitleOverlay {
+    opacity: 0;
+}
+
 .imageOverlay {
     position: absolute;
     top: 0;
@@ -181,6 +212,14 @@
         height: 300px;
     }
     
+    .defaultTitleOverlay {
+        padding: 15px;
+    }
+    
+    .defaultProjectName {
+        font-size: 1.2rem;
+    }
+    
     .imageOverlay {
         padding: 20px;
         opacity: 1;
@@ -214,6 +253,14 @@
     .projectCard {
         height: 250px;
 }
+    
+    .defaultTitleOverlay {
+        padding: 12px;
+    }
+    
+    .defaultProjectName {
+        font-size: 1rem;
+    }
     
     .imageOverlay {
         padding: 15px;
