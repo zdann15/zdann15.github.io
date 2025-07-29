@@ -21,8 +21,14 @@ export default function Home() {
           <div className={styles1.section}>
             <Header1>Experience</Header1>
             <hr className={styles1.line}/>
+            <Header2>Software Engineer Intern</Header2>
+            <Date>May 2025 - Present</Date>
+            <Header3>Shopify</Header3>
+            <Content>
+              - Interning on the Shopify Payments Account Capabilities team
+            </Content>
             <Header2>Software Developer Intern</Header2>
-            <Date>Apr 2024 -</Date>
+            <Date>Apr 2024 - Present</Date>
             <Header3>Utility Automation Solutions</Header3>
             <Content>
               - Built app using Windows Forms, WPF and C# to process COMTRADE event files and graphically model analog/digital channel signals
@@ -40,7 +46,7 @@ export default function Home() {
             <hr className={styles1.line}/>
             <Header2>Schulich Leader Scholarship</Header2>
             <Content>
-              One of ten $100K scholarships awarded by the University of Waterloo. 
+              Awarded the $100K Schulich Leader Scholarship by the University of Waterloo. 
               Canada's most prestigious STEM undergraduate scholarship.
             </Content>
             <Header2>International Economics Olympiad - Absolute Winner</Header2>
@@ -53,7 +59,7 @@ export default function Home() {
             <Header1>Skills</Header1>
             <hr className={styles1.line}/>
             <Content> 
-              C#, Python, Java, HTML, CSS, JavaScript, Next.js, React Native 
+              C#, Python, Ruby, Java, HTML, CSS, JavaScript, Next.js, React Native 
             </Content>
           </div>
         </div>

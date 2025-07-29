@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import { Header, Text } from './components/header.js';
 import Image from 'next/image';
-import avatar from './images/avatar.jpg';
+import avatar from './images/avatar.png';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);

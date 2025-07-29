@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles1 from './page.module.css';
 import Image from 'next/image';
 import finlyze from '../images/finlyze.png';
-import starduo from '../images/starduo.jpeg';
+import starduo from '../images/starduo.png';
 import drchecker from '../images/drchecker.png';
 
 export default function Projects() {
@@ -26,7 +26,7 @@ export default function Projects() {
     },
     {
       id: 3,
-      name: "DRChecker",
+      name: "CapySpend",
       image: drchecker,
       description: "An app for graphical analysis of relay signals, built using WPF, XAML and C#.",
       technologies: ["C#", "WPF", "XAML", ".NET"]
@@ -35,11 +35,10 @@ export default function Projects() {
 
   return (
     <>
-      <title>Daniel Zhang | Projects</title>
+      <title>Projects</title>
       <div className={styles1.container}>
         <div className={`${styles1.header} ${styles1.slideinleft}`}>
           <h1 className={styles1.title}>My Projects</h1>
-          <p className={styles1.subtitle}>Here are some of the projects I've worked on</p>
         </div>
         
         <div className={styles1.projectsGrid}>

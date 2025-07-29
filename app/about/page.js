@@ -2,6 +2,8 @@
 import styles from "../page.module.css";
 import {Navbar, Navitem} from "../components/navbar.js"
 import {useState, useEffect} from "react";
+import Image from 'next/image';
+import aboutImage from '../images/about.png';
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,44 +18,70 @@ export default function About() {
   
   return (
     <div className={`${isVisible ? styles.slideinleft : ''}`} style={{
-      padding: '120px 80px',
-      maxWidth: '1200px',
+      padding: '15vh 8vw',
+      maxWidth: '1500px',
       margin: '0 auto',
       color: 'white',
       fontFamily: 'Inter',
-      opacity: isVisible ? 1 : 0
+      opacity: isVisible ? 1 : 0,
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
     }}>
-      <h1 style={{
-        fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-        fontWeight: '700',
-        marginBottom: '32px',
-        textAlign: 'center',
-        textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '6vw',
+        marginBottom: '5vh'
       }}>
-        About Me
-      </h1>
-      
-      <p style={{
-        fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
-        lineHeight: '1.6',
-        marginBottom: '48px',
-        textAlign: 'center',
-        maxWidth: '800px',
-        margin: '0 auto 48px auto'
-      }}>
-        I'm a passionate Computer Science student at the University of Waterloo, 
-        specializing in backend development and software engineering. I love creating 
-        innovative solutions and exploring new technologies.
-      </p>
+        <div style={{ flex: 1 }}>
+          <h1 style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+            fontWeight: '700',
+            marginBottom: '32px'
+          }}>
+            About Me
+          </h1>
+          
+          <p style={{
+            fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)',
+            lineHeight: '1.6',
+            marginBottom: '48px',
+            maxWidth: '1000px'
+          }}>
+            I'm a passionate Computer Science student at the University of Waterloo, 
+            specializing in backend development and software engineering. I love creating 
+            innovative solutions and exploring new technologies.
+          </p>
+        </div>
+        
+        <div style={{ flexShrink: 0 }}>
+          <Image 
+            src={aboutImage}
+            alt="About Daniel Zhang"
+            width={400}
+            height={400}
+            style={{
+              width: '25vw',
+              height: '25vw',
+              maxWidth: '600px',
+              maxHeight: '600px',
+              objectFit: 'cover',
+              borderRadius: '5%',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
+            }}
+          />
+        </div>
+      </div>
       
       <h2 style={{
         fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
         fontWeight: '600',
         marginBottom: '24px',
-        textAlign: 'center',
-        textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+        textAlign: 'center'
       }}>
-        Let's Connect
+        Let's Connect!
       </h2>
       
       <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>

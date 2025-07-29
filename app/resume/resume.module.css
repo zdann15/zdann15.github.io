@@ -85,25 +85,24 @@
   border-radius: 2px;
 }
 
-  .header2 {
-    font-family: Inter;
+.header2 {
+  font-family: Inter;
   font-size: clamp(1.2rem, 2.5vw, 1.4rem);
   font-weight: 600;
   color: white;
   float: left;
-  padding-bottom: 8px;
 }
 
-  .header3 {
+.header3 {
     font-family: Inter;
   font-size: clamp(1rem, 2vw, 1.1rem);
   color: white;
-  margin-top: 4px;
   font-style: italic;
   clear: both;
+  font-weight: 300;
 }
 
-  .date {
+.date {
   float: right;
   color: white;
   font-size: clamp(0.9rem, 2vw, 1rem);
@@ -111,7 +110,7 @@
   font-style: italic;
 }
 
-  .content{
+.content{
   color: white;
   font-family: Inter;
   margin-top: 8px;
@@ -130,7 +129,7 @@
 }
 
 .section {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
   border-radius: 16px;
   padding: 16px;
   margin-bottom: 12px;
