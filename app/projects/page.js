@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react';
 import styles1 from './page.module.css';
 import Image from 'next/image';
 import finlyze from '../images/finlyze.png';
@@ -7,8 +6,6 @@ import starduo from '../images/starduo.png';
 import capyspend from '../images/capyspend.png';
 
 export default function Projects() {
-  const [activeProject, setActiveProject] = useState(0);
-  
   const projects = [
     {
       id: 1,
@@ -50,8 +47,6 @@ export default function Projects() {
               key={project.id}
               className={`${styles1.projectCard} ${styles1.slideinleft}`}
               style={{ animationDelay: `${index * 0.2}s` }}
-              onMouseEnter={() => setActiveProject(project.id)}
-              onMouseLeave={() => setActiveProject(0)}
             >
               <div className={styles1.projectImage}>
                 <Image 
@@ -60,6 +55,7 @@ export default function Projects() {
                   fill
                   style={{ objectFit: 'cover' }}
                   className={styles1.image}
+                  priority={index < 2}
                 />
                 
                 {/* Default title overlay - always visible */}
