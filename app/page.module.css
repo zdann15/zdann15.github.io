@@ -8,7 +8,7 @@
   height:100%;
   position: fixed;
   z-index:-1;
-  background: linear-gradient(135deg, #4c63d2 0%, #5a4b8a 100%);
+  background: white;
   background-image:
     radial-gradient(at 0% 0%, hsla(227,82%,39%,0.7) 0px, transparent 50%),
     radial-gradient(at 19% 33%, hsla(266,58%,37%,0.7) 0px, transparent 50%),
