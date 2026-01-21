@@ -149,6 +149,7 @@
 @media (max-width: 768px) {
   .page {
     padding: 80px 20px;
+    padding-top: 100px;
     padding-bottom: 120px;
   }
   
@@ -161,6 +162,19 @@
     margin-bottom: 12px;
   }
   
+  .header2 {
+    float: none;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .date {
+    float: none;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
   .content {
     padding-bottom: 16px;
   }
@@ -169,4 +183,36 @@
     padding: 16px;
     margin-bottom: 16px;
   }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 60px 15px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
+  
+  .header1 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+  
+  .header2 {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+  
+  .header3 {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+  }
+  
+  .date {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  }
+  
+  .content {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+  
+  .section {
+    padding: 12px;
+  }
+}

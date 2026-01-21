@@ -50,14 +50,26 @@
   display: flex;
   flex-direction:column;
   justify-content:center;
-  height:100vh;
-  /*align-items: left;*/
+  min-height:100vh;
   padding:80px;
   gap: 64px;
   opacity:0;
   width:60%;
   float:left;
 }
+
+@media (max-width: 768px) {
+  .page {
+    width: 100%;
+    float: none;
+    padding: 40px 20px;
+    gap: 32px;
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+}
+
 .container{
   display:flex;
   flex-direction:column;
@@ -71,10 +83,23 @@
   opacity:0;
 }
 
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: auto;
+    max-width: 300px;
+  }
+}
+
 .header {
   font-family: Inter;
-  font-size: 80px;
+  font-size: clamp(2.5rem, 8vw, 80px);
   color:white;
+  line-height: 1.2;
 }
 .avatar{
   width:100%;
@@ -86,22 +111,55 @@
 
 .text {
   font-family: Inter;
-  font-size: 25px;
+  font-size: clamp(1rem, 3vw, 25px);
   color:white;
   display:block;
-  line-height:40px;
+  line-height:1.6;
   max-width:100%;
+}
+
+@media (max-width: 768px) {
+  .text {
+    line-height: 1.5;
+  }
 }
 @media only screen and (max-width:800px){
   .navbar {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     color: white;
     font-family: Inter;
     margin-top: 20px;
-    width:98%;
-    margin-right: 50px;
+    width: 100%;
+    margin-right: 0;
+    padding: 0 10px;
+    gap: 4px;
+  }
+  
+  .navitem {
+    font-size: clamp(0.85rem, 3vw, 20px);
+    margin: 5px;
+    padding: 8px 12px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 5px;
+    gap: 2px;
+  }
+  
+  .navitem {
+    font-size: clamp(0.75rem, 3.5vw, 0.85rem);
+    margin: 3px;
+    padding: 6px 10px;
+  }
+  
+  .curLink {
+    margin: 3px;
+    padding: 6px 10px;
   }
 }
   .slideinleft {
@@ -241,9 +299,26 @@
 
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
-    padding-bottom: 80px;
+    padding: 20px 15px;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    gap: 24px;
   }
+  
+  .container {
+    max-width: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .header {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+  
+  .text {
+    font-size: clamp(0.95rem, 4vw, 1rem);
+  }
+  
   a.secondary {
     min-width: auto;
   }
@@ -252,5 +327,140 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+}
+
+/* About page styles */
+.aboutPage {
+  padding: 15vh 8vw;
+  max-width: 1500px;
+  margin: 0 auto;
+  color: white;
+  font-family: Inter;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6vw;
+  margin-bottom: 5vh;
+}
+
+.aboutText {
+  flex: 1;
+  width: 100%;
+}
+
+.aboutTitle {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.aboutDescription {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  line-height: 1.6;
+  margin-bottom: 48px;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.aboutImageContainer {
+  flex-shrink: 0;
+}
+
+.aboutImage {
+  width: 25vw;
+  height: 25vw;
+  max-width: 600px;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 5%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.connectTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.connectLinks {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.connectLink {
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 500;
+}
+
+.connectLink:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: 10vh 5vw;
+    padding-top: 100px;
+  }
+  
+  .aboutContent {
+    flex-direction: column;
+    gap: 4vh;
+  }
+  
+  .aboutTitle {
+    text-align: center;
+  }
+  
+  .aboutDescription {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .aboutImageContainer {
+    width: 60%;
+    max-width: 300px;
+  }
+  
+  .aboutImage {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutPage {
+    padding: 8vh 4vw;
+    padding-top: 100px;
+  }
+  
+  .aboutImageContainer {
+    width: 80%;
+    max-width: 250px;
   }
 }
