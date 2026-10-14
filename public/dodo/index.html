@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f9d6d9" />
+  <title>For you ♥</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c4476a' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Ma+Shan+Zheng&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- shared SVG paint servers -->
+  <svg class="defs" width="0" height="0" aria-hidden="true">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fbeccb" />
+        <stop offset=".45" stop-color="#dcbb7e" />
+        <stop offset="1" stop-color="#a97b3e" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="night" aria-hidden="true"></div>
+
+  <main id="app">
+    <!-- ── Scene 1: the envelope ─────────────────────────────── -->
+    <section class="scene scene-envelope is-active intro" id="scene-envelope">
+      <header class="env-title">
+        <p class="kicker rise" style="--d:.2s" id="env-kicker"></p>
+        <h1 class="to big rise" style="--d:.45s" id="env-to"></h1>
+      </header>
+
+      <div class="envelope-wrap rise" style="--d:.75s">
+        <div class="envelope-float">
+          <div class="envelope" id="envelope">
+            <div class="env-back"></div>
+            <div class="letter">
+              <div class="letter-deco">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <i></i><i></i><i></i>
+              </div>
+            </div>
+            <div class="env-pocket"><i class="l"></i><i class="r"></i><i class="b"></i></div>
+            <div class="env-flap"></div>
+            <button class="seal" id="seal" aria-label="Break the seal and open the envelope">
+              <span class="seal-wax"></span>
+              <svg class="seal-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="env-shadow"></div>
+      </div>
+
+      <div class="hint-wrap"><p class="hint rise" style="--d:1.3s" id="env-hint"></p></div>
+    </section>
+
+    <!-- ── Scene 2: the card ─────────────────────────────────── -->
+    <section class="scene scene-book" id="scene-book">
+      <div class="book-wrap">
+        <div class="book-stage" id="book-stage">
+          <div class="book" id="book"></div>
+        </div>
+        <nav class="book-nav" aria-label="Turn pages">
+          <button class="nav-btn" id="prev" aria-label="Previous page">
+            <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <div class="progress" aria-hidden="true">
+            <div class="progress-fill" id="progress-fill"></div>
+            <span class="progress-heart" id="progress-heart"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span>
+          </div>
+          <button class="nav-btn" id="next" aria-label="Next page">
+            <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </nav>
+        <p class="book-hint" id="book-hint"></p>
+      </div>
+    </section>
+
+    <!-- ── Scene 3: the finale ───────────────────────────────── -->
+    <section class="scene scene-finale" id="scene-finale">
+      <canvas id="stars" aria-hidden="true"></canvas>
+      <div class="finale-content" id="finale-content">
+        <p class="f-kicker" id="f-kicker"></p>
+        <h2 class="f-title big" id="f-title"></h2>
+        <p class="f-msg" id="f-msg"></p>
+        <div class="counter-wrap">
+          <span class="counter-label" id="counter-label"></span>
+          <div class="counter" id="counter"></div>
+        </div>
+        <div class="f-actions">
+          <button class="btn-love" id="kiss"></button>
+          <button class="btn-ghost" id="replay"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+    <figure>
+      <img id="lb-img" alt="" />
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+  </div>
+
+  <button class="music" id="music" aria-label="Toggle music" hidden><i></i><i></i><i></i><i></i></button>
+  <audio id="audio" loop preload="auto"></audio>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
